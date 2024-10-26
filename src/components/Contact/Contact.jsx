@@ -1,4 +1,3 @@
-import React from 'react';
 import { HiPhone } from "react-icons/hi2";
 import { HiUser } from "react-icons/hi2";
 import styles from './Contact.module.css'

@@ -1,7 +1,9 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import React from 'react';
-import styles from './ContactForm.module.css';
+import styles from './ContactsForm.module.css';
 import * as Yup from "yup";
+import { useDispatch } from 'react-redux';
+import { addContact } from '../../redux/contactsSlice';
+import { nanoid } from 'nanoid';
 
 const numberRegex =
   /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
@@ -16,9 +18,20 @@ const initialValues = {
   number: "",
 };
 
-const ContactForm = ({addUser}) => {
+const ContactsForm = () => {
+  const dispatch = useDispatch();
+
+    const onAddContact = (newUser) => {
+    const finalUser = {
+      ...newUser,
+      id: nanoid(),
+    }
+    const action = addContact(finalUser);
+    dispatch(action);
+  };
+
   const handleSubmit = (values, actions) => {
-    addUser(values);
+    onAddContact(values);
     actions.resetForm();
   };
 
@@ -41,4 +54,4 @@ const ContactForm = ({addUser}) => {
   )
 }
 
-export default ContactForm
+export default ContactsForm
