@@ -1,5 +1,5 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import styles from './ContactsForm.module.css';
+import styles from './ContactForm.module.css';
 import * as Yup from "yup";
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contactsSlice';
@@ -18,7 +18,7 @@ const initialValues = {
   number: "",
 };
 
-const ContactsForm = () => {
+const ContactForm = () => {
   const dispatch = useDispatch();
 
     const onAddContact = (newUser) => {
@@ -54,4 +54,4 @@ const ContactsForm = () => {
   )
 }
 
-export default ContactsForm
+export default ContactForm

@@ -1,14 +1,14 @@
 import './App.css';
 import SearchBox from './SearchBox/SearchBox';
 import ContactList from './ContactList/ContactList';
-import ContactsForm from './ContactsForm/ContactsForm';
+import ContactForm from './ContactForm/ContactForm';
 
 
 function App() {
   return (
     <div>
       <h1>Phonebook</h1>
-      <ContactsForm/>
+      <ContactForm/>
       <SearchBox/>
       <ContactList/>
     </div>
